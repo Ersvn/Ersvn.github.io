@@ -662,96 +662,122 @@ function ProjectPage({ project }: { project: Project }) {
   useDocumentMeta(`${project.title} | Erik Svensson`, project.description);
 
   return (
-    <>
-      <Header />
-      <main className="min-h-screen bg-[#F5F2ED]">
-        <section className="relative flex min-h-[100svh] items-end overflow-hidden bg-[#0B1018] px-6 pb-18 pt-36 text-[#F5F2ED] md:px-20 md:pb-32 md:pt-36">
-          <ProjectImage
-            image={project.images.hero}
-            title={project.title}
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,_rgba(7,9,14,0.16),_rgba(7,9,14,0.24)_22%,_rgba(7,9,14,0.64)_64%,_rgba(11,16,24,0.96)_100%)]" />
-          <div className="relative z-10 w-full max-w-7xl">
-            <a
-              href="/#projects"
-              className="mb-12 inline-block border-b border-[#C5A059]/50 pb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-[#F5F2ED]/80"
-            >
-              Back to portfolio
-            </a>
-            <p className="mb-6 text-[10px] uppercase tracking-[0.4em] text-[#C5A059]">
-              {project.caseStudy.year} / {project.tags.join(" / ")}
-            </p>
-            <h1 className="mb-8 font-serif text-6xl leading-none tracking-tight text-[#F5F2ED] md:text-9xl">
-              {project.title}
-            </h1>
-            <p className="max-w-2xl font-sans text-xl leading-relaxed text-[#F5F2ED]/70">
-              {project.description}
-            </p>
+    <main className="case-study">
+      <section className="case-hero">
+        <ProjectImage image={project.images.hero} title={project.title} sizes="100vw" />
+        <div className="case-hero__shade" />
+        <div className="case-hero__inner">
+          <a
+            href="/#projects"
+            className="case-back-link"
+          >
+            <span aria-hidden="true">&larr;</span>
+            Back Home
+          </a>
+          <p className="case-eyebrow">
+            {project.tags.join(" / ")}
+          </p>
+          <h1>
+            {project.title}
+          </h1>
+          <p className="case-lead">
+            {project.description}
+          </p>
+          <div className="case-tech-list">
+            {project.tech.map((tech) => (
+              <span
+                className="case-chip"
+                key={tech}
+              >
+                {tech}
+              </span>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="px-6 py-32 md:px-20 md:py-64">
-          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-16 md:grid-cols-[0.95fr_1.05fr] md:gap-24">
-            <aside className="space-y-6">
-              <CaseMeta label="Role" value={project.caseStudy.role} />
-              <CaseMeta label="Duration" value={project.caseStudy.duration} />
-              <CaseMeta label="Stack" value={project.tech.join(" / ")} />
-              {project.links?.github && (
-                <a
-                  href={project.links.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-block border-b border-[#121212] pb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-[#121212]"
-                >
-                  GitHub repository
-                </a>
-              )}
-            </aside>
-            <article className="max-w-3xl">
-              <p className="mb-6 text-[10px] uppercase tracking-[0.4em] text-[#C5A059]">
-                Overview
-              </p>
-              <h2 className="mb-10 font-serif text-4xl leading-tight tracking-tight text-[#121212] md:text-6xl">
-                {project.caseStudy.overviewHeading}
-              </h2>
+      <section className="case-body">
+        <div className="case-body__glow" />
+        <div className="case-grid">
+          <article className="case-story">
+            <p className="case-eyebrow">
+              Overview
+            </p>
+            <h2>
+              {project.caseStudy.overviewHeading}
+            </h2>
+            <div className="case-overview-copy">
               {project.caseStudy.overview.map((paragraph) => (
                 <p
-                  className="mb-8 font-sans text-xl leading-relaxed text-[#121212]/70"
                   key={paragraph}
                 >
                   {paragraph}
                 </p>
               ))}
+            </div>
+            <div className="case-text-stack">
               <CaseText title="Challenge" text={project.caseStudy.challenge} />
               <CaseText title="Approach" text={project.caseStudy.approach} />
               <CaseText title="Outcome" text={project.caseStudy.outcome} />
-            </article>
-          </div>
-        </section>
-      </main>
-    </>
+            </div>
+          </article>
+
+          <aside className="case-sidebar">
+            <div className="case-panel">
+              <div className="case-panel__header">
+                <p className="case-eyebrow">
+                  Project Snapshot
+                </p>
+                <p className="case-year">
+                  {project.caseStudy.year}
+                </p>
+              </div>
+              <div className="case-panel__body">
+                <CaseMeta label="Role" value={project.caseStudy.role} />
+                <CaseMeta label="Duration" value={project.caseStudy.duration} />
+                <CaseMeta label="Stack" value={project.tech.join(" / ")} />
+                {project.links?.github && (
+                  <a
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="case-github-link"
+                  >
+                    GitHub repo
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                )}
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
   );
 }
 
 function CaseMeta({ label, value }: { label: string; value: string }) {
   return (
-    <div className="border-t border-[#121212]/15 pt-5">
-      <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-[#C5A059]">
+    <div className="case-meta-row">
+      <p className="case-meta-label">
         {label}
       </p>
-      <p className="font-sans text-lg leading-relaxed text-[#121212]/70">{value}</p>
+      <p className="case-meta-value">
+        {value}
+      </p>
     </div>
   );
 }
 
 function CaseText({ title, text }: { title: string; text: string }) {
   return (
-    <section className="mt-16">
-      <h3 className="mb-5 font-serif text-3xl tracking-tight text-[#121212] md:text-5xl">
+    <section className="case-text-block">
+      <h3>
         {title}
       </h3>
-      <p className="font-sans text-xl leading-relaxed text-[#121212]/70">{text}</p>
+      <p>
+        {text}
+      </p>
     </section>
   );
 }
@@ -779,7 +805,6 @@ function NotFoundPage() {
     </>
   );
 }
-
 export function App() {
   const path = window.location.pathname.replace(/\/$/, "");
   const projectMatch = path.match(/^\/projects\/([^/]+)$/);

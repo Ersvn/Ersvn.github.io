@@ -8,5 +8,8 @@ export default defineConfig({
     sourcemap: false,
     cssCodeSplit: true,
     reportCompressedSize: true,
+    rollupOptions: {
+      input: "index.dev.html",
+    },
   },
 });
