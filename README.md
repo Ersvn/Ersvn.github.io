@@ -1,14 +1,24 @@
-# 🌍 Erik Svensson Portfolio
+# Erik Svensson Portfolio
 
-This repository contains my personal portfolio website.
+Personal portfolio website for Erik Svensson.
 
-👉 Live site: https://ersvn.github.io/
+Live site: https://ersvn.github.io/
 
 ## Tech
 
-* React + Vite
-* GitHub Pages
+- React
+- TypeScript
+- Vite
+- GitHub Pages
 
-## Purpose
+## Commands
 
-Showcase my projects, especially my pricing engine & dashboard system.
+```bash
+npm install
+npm run dev
+npm run build
+```
+
+## Notes
+
+The build creates a `dist/404.html` fallback so direct project URLs work on GitHub Pages.
