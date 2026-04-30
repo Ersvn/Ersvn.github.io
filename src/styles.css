@@ -58,21 +58,34 @@
 .case-back-link {
   display: inline-flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 3rem;
-  color: rgba(245, 242, 237, 0.8);
+  gap: 0.85rem;
+  margin-bottom: 3.5rem;
+  border: 1px solid rgba(197, 160, 89, 0.42);
+  border-radius: 999px;
+  background: rgba(3, 6, 9, 0.58);
+  color: #f5f2ed;
+  padding: 0.8rem 1.1rem;
   font-family: var(--font-inter), Inter, sans-serif;
   font-size: 0.625rem;
   font-weight: 700;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.24em;
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(12px);
   text-transform: uppercase;
-  transition: color 180ms ease;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
 .case-back-link span,
 .case-back-link:hover,
 .case-back-link:focus-visible {
   color: #c5a059;
+}
+
+.case-back-link:hover,
+.case-back-link:focus-visible {
+  border-color: rgba(197, 160, 89, 0.78);
+  background: rgba(11, 16, 24, 0.82);
+  transform: translateY(-1px);
 }
 
 .case-eyebrow {
