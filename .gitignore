@@ -1,4 +1,23 @@
-node_modules
-dist
+# dependencies
+node_modules/
+
+# build output
+dist/
+assets/
+
+# environment
 .env
-.idea
+.env.*
+
+# editor
+.idea/
+.vscode/
+.DS_Store
+
+# old/generated exports
+_next/
+_not-found/
+__next.*.txt
+*.txt
+logo.html
+_not-found.html
