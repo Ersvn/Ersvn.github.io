@@ -666,14 +666,12 @@ function ProjectPage({ project }: { project: Project }) {
       <section className="case-hero">
         <ProjectImage image={project.images.hero} title={project.title} sizes="100vw" />
         <div className="case-hero__shade" />
+        <a href="/#projects" className="case-back-link">
+          <span aria-hidden="true">&larr;</span>
+          Back Home
+        </a>
+
         <div className="case-hero__inner">
-          <a
-            href="/#projects"
-            className="case-back-link"
-          >
-            <span aria-hidden="true">&larr;</span>
-            Back Home
-          </a>
           <p className="case-eyebrow">
             {project.tags.join(" / ")}
           </p>
