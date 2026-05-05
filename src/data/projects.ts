@@ -28,7 +28,7 @@ export const projects: Project[] = [
     slug: "price-engine",
     title: "Price Engine",
     description:
-      "An advanced dashboard for price analysis and automated price comparison, built to handle large product datasets with precision.",
+        "A dashboard for analyzing prices and comparing products automatically, built to handle larger datasets in a structured way.",
     tech: ["Spring Boot", "Postgres", "React", "Tailwind"],
     tags: ["Fullstack", "Java", "Data Analysis"],
     images: {
@@ -37,20 +37,20 @@ export const projects: Project[] = [
     },
     caseStudy: {
       year: "2026",
-      role: "Fullstack Engineer / System Design",
-      duration: "Ongoing product build",
+      role: "Fullstack Developer",
+      duration: "Ongoing",
       overviewHeading:
-        "A pricing platform that combines data quality, backend logic, and clear decision support in the interface.",
+          "A pricing tool where I focused on combining backend logic with a clear and simple UI.",
       overview: [
-        "The project focuses on collecting, matching, and analyzing product data from multiple sources to create a stronger foundation for pricing decisions.",
-        "The core work is robust data modeling, clear rules for price logic, and an interface that makes complex information understandable within seconds.",
+        "The idea was to collect and match product data from different sources and use that to support pricing decisions.",
+        "A big part of the work was building the data structure and making sure the pricing logic is easy to understand and follow.",
       ],
       challenge:
-        "The challenge was to combine technical complexity with clear presentation. The system needed to handle large amounts of product data, different identifiers, and multiple pricing strategies without feeling heavy or cluttered.",
+          "The main challenge was handling messy product data (like different identifiers and formats) while still keeping the UI simple and easy to use.",
       approach:
-        "The solution was built as a structured fullstack flow: backend logic for import, matching, and pricing rules; data storage for snapshots and analysis; and a frontend layer that highlights the most important decisions in a calm, polished UI.",
+          "I split the system into clear parts: backend for data handling and pricing logic, a database for storing snapshots, and a frontend that highlights the most important info.",
       outcome:
-        "The result is a strong foundation for a real product tool where technology, business logic, and UX work together. It shows both technical range and the ability to package complexity professionally.",
+          "The result is a working foundation for a pricing tool that shows both backend logic and how to present data in a clean way.",
     },
     links: {
       github: "https://github.com/Ersvn/Product-Data-Analyzer",
@@ -60,7 +60,7 @@ export const projects: Project[] = [
     slug: "scraper-pipeline",
     title: "Scraper Pipeline",
     description:
-      "An automated data collection flow, from sitemaps to enriched product data and stored snapshots.",
+        "A pipeline that collects product data from websites and turns it into structured data.",
     tech: ["Python", "Playwright", "Postgres"],
     tags: ["Scraping", "Backend", "Automation"],
     images: {
@@ -69,27 +69,27 @@ export const projects: Project[] = [
     },
     caseStudy: {
       year: "2026",
-      role: "Backend Engineer / Data Automation",
-      duration: "Pipeline architecture and enrichment flow",
+      role: "Backend Developer",
+      duration: "Ongoing",
       overviewHeading:
-        "A data collection pipeline where structure, reliability, and data quality stay at the center.",
+          "A data pipeline where I focused on structure and reliability.",
       overview: [
-        "The project takes product data from raw sources to a more useful and enriched format through an automated step-by-step flow.",
-        "The goal was to build something that can grow over time without compromising clarity, traceability, or stability in the data process.",
+        "The project takes raw product data and processes it step by step into something usable.",
+        "I wanted to make sure the flow is easy to understand and extend later.",
       ],
       challenge:
-        "When multiple external sources, formats, and quality levels meet, it quickly becomes difficult to keep a reliable data flow. The challenge was to create structure without making the system rigid.",
+          "Working with different sources means inconsistent data, so it was tricky to keep everything clean and reliable.",
       approach:
-        "The solution was divided into clear stages for fetching, parsing, enrichment, and storage. That gave better control over error handling, quality filters, and the ability to improve each part independently.",
+          "I divided the pipeline into steps like fetching, parsing, and storing. That made it easier to debug and improve each part separately.",
       outcome:
-        "The result is a more scalable foundation for data collection where automation does not only save time, but also improves the quality of information used later in analysis and pricing logic.",
+          "The result is a simple but scalable pipeline that makes it easier to collect and reuse product data.",
     },
   },
   {
     slug: "aimtech",
     title: "Aimtech",
     description:
-      "A digital identity and modern web experience for Aimtech, focused on performance, SEO, and premium UI/UX.",
+        "A company website I helped build, where the original request was to create it in WordPress.",
     tech: ["React", "Next.js", "Framer Motion"],
     tags: ["Frontend", "UI/UX", "Branding"],
     images: {
@@ -98,20 +98,20 @@ export const projects: Project[] = [
     },
     caseStudy: {
       year: "2026",
-      role: "Frontend Developer / Brand Direction",
-      duration: "Concept to premium web presence",
+      role: "Frontend Developer",
+      duration: "Project-based",
       overviewHeading:
-        "A digital identity where security, credibility, and a premium feel meet in a modern interface.",
+          "A website project where I was asked to help build a WordPress solution, but explored a more custom frontend approach.",
       overview: [
-        "Aimtech was designed to feel more like an established premium brand than a traditional service page, with focus on tone, balance, and visual discipline.",
-        "The work was as much about defining a consistent expression as it was about optimizing performance, responsiveness, and information hierarchy.",
+        "I was asked to help create a new website for Aimtech, with the initial plan being to build it in WordPress.",
+        "During the process, I explored how a custom frontend could give better performance and more control over the design.",
       ],
       challenge:
-        "The main challenge was creating an experience that feels premium without becoming heavy or overdesigned. Every detail needed to support the brand without disturbing the reading flow.",
+          "The challenge was balancing simplicity (like WordPress would provide) with the flexibility and performance of a custom-built solution.",
       approach:
-        "A restrained palette, consistent spacing system, clear typography, and controlled motion created an experience that feels considered in every layer.",
+          "I built the frontend using React and focused on keeping the design clean and structured, while still making it easy to navigate and maintain.",
       outcome:
-        "The project shows the ability to combine branding, UX, and implementation into a cohesive experience that feels both visual and business-minded.",
+          "The result is a modern and responsive site that shows how a more custom approach can improve both performance and user experience.",
     },
   },
 ];
