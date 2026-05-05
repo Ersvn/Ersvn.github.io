@@ -661,96 +661,102 @@ function TechFooter() {
 function ProjectPage({ project }: { project: Project }) {
   useDocumentMeta(`${project.title} | Erik Svensson`, project.description);
 
-  return (
-    <main className="case-study">
-      <section className="case-hero">
-        <ProjectImage image={project.images.hero} title={project.title} sizes="100vw" />
-        <div className="case-hero__shade" />
-        <a href="/#projects" className="case-back-link">
-          <span aria-hidden="true">&larr;</span>
-          Back Home
-        </a>
+  useEffect(() => {
+    document.body.classList.add("case-page-open");
 
-        <div className="case-hero__inner">
-          <p className="case-eyebrow">
-            {project.tags.join(" / ")}
-          </p>
-          <h1>
-            {project.title}
-          </h1>
-          <p className="case-lead">
-            {project.description}
-          </p>
-          <div className="case-tech-list">
-            {project.tech.map((tech) => (
-              <span
-                className="case-chip"
-                key={tech}
-              >
+    return () => {
+      document.body.classList.remove("case-page-open");
+    };
+  }, []);
+
+  return (
+      <main className="case-study">
+        <section className="case-hero">
+          <ProjectImage image={project.images.hero} title={project.title} sizes="100vw" />
+          <div className="case-hero__shade" />
+          <a href="/#projects" className="case-back-link">
+            <span aria-hidden="true">&larr;</span>
+            Back Home
+          </a>
+
+          <div className="case-hero__inner">
+            <p className="case-eyebrow">
+              {project.tags.join(" / ")}
+            </p>
+            <h1>
+              {project.title}
+            </h1>
+            <p className="case-lead">
+              {project.description}
+            </p>
+            <div className="case-tech-list">
+              {project.tech.map((tech) => (
+                  <span
+                      className="case-chip"
+                      key={tech}
+                  >
                 {tech}
               </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="case-body">
-        <div className="case-body__glow" />
-        <div className="case-grid">
-          <article className="case-story">
-            <p className="case-eyebrow">
-              Overview
-            </p>
-            <h2>
-              {project.caseStudy.overviewHeading}
-            </h2>
-            <div className="case-overview-copy">
-              {project.caseStudy.overview.map((paragraph) => (
-                <p
-                  key={paragraph}
-                >
-                  {paragraph}
-                </p>
               ))}
             </div>
-            <div className="case-text-stack">
-              <CaseText title="Challenge" text={project.caseStudy.challenge} />
-              <CaseText title="Approach" text={project.caseStudy.approach} />
-              <CaseText title="Outcome" text={project.caseStudy.outcome} />
-            </div>
-          </article>
+          </div>
+        </section>
 
-          <aside className="case-sidebar">
-            <div className="case-panel">
-              <div className="case-panel__header">
-                <p className="case-eyebrow">
-                  Project Snapshot
-                </p>
-                <p className="case-year">
-                  {project.caseStudy.year}
-                </p>
+        <section className="case-body">
+          <div className="case-body__glow" />
+          <div className="case-grid">
+            <article className="case-story">
+              <p className="case-eyebrow">
+                Overview
+              </p>
+              <h2>
+                {project.caseStudy.overviewHeading}
+              </h2>
+              <div className="case-overview-copy">
+                {project.caseStudy.overview.map((paragraph) => (
+                    <p key={paragraph}>
+                      {paragraph}
+                    </p>
+                ))}
               </div>
-              <div className="case-panel__body">
-                <CaseMeta label="Role" value={project.caseStudy.role} />
-                <CaseMeta label="Duration" value={project.caseStudy.duration} />
-                <CaseMeta label="Stack" value={project.tech.join(" / ")} />
-                {project.links?.github && (
-                  <a
-                    href={project.links.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="case-github-link"
-                  >
-                    GitHub repo
-                    <span aria-hidden="true">↗</span>
-                  </a>
-                )}
+              <div className="case-text-stack">
+                <CaseText title="Challenge" text={project.caseStudy.challenge} />
+                <CaseText title="Approach" text={project.caseStudy.approach} />
+                <CaseText title="Outcome" text={project.caseStudy.outcome} />
               </div>
-            </div>
-          </aside>
-        </div>
-      </section>
-    </main>
+            </article>
+
+            <aside className="case-sidebar">
+              <div className="case-panel">
+                <div className="case-panel__header">
+                  <p className="case-eyebrow">
+                    Project Snapshot
+                  </p>
+                  <p className="case-year">
+                    {project.caseStudy.year}
+                  </p>
+                </div>
+                <div className="case-panel__body">
+                  <CaseMeta label="Role" value={project.caseStudy.role} />
+                  <CaseMeta label="Duration" value={project.caseStudy.duration} />
+                  <CaseMeta label="Stack" value={project.tech.join(" / ")} />
+                  {project.links?.github && (
+                      <a
+                          href={project.links.github}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="case-github-link"
+                      >
+                        GitHub repo
+                        <span aria-hidden="true">↗</span>
+                      </a>
+                  )}
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+      </main>
   );
 }
 
