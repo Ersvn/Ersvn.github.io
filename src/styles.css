@@ -354,3 +354,8 @@
     border-radius: 1.25rem;
   }
 }
+
+.case-page {
+  min-height: 100vh;
+  background: #030609;
+}
