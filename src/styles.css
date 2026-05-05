@@ -355,7 +355,10 @@
   }
 }
 
-.case-page {
-  min-height: 100vh;
+html, body {
   background: #030609;
+}
+
+.case-page {
+  min-height: 100dvh;
 }
